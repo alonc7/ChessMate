@@ -1,0 +1,87 @@
+/* Add your global styles or reset here if needed */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  overflow: hidden;
+  background-image: url("assets/images/chess-background.jpg");
+  background-size: cover; /* or 'contain', depending on your preference */
+  background-repeat: initial;
+  background-position: back ;
+}
+
+/* Chessboard styles (you might have existing styles for this) */
+.chessboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+}
+
+.modal img {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Hidden class */
+.hidden {
+  display: none;
+}
+
+.checkmate-body {
+  text-align: center;
+}
+
+.checkmate-body span {
+  font-size: 24px; /* Larger font size */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffcc00; /* Gold color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+}
+
+.checkmate-body button {
+  padding: 15px 30px; /* Larger button */
+  font-size: 18px; /* Larger font size */
+  background-color: #ffcc00; /* Gold color */
+  border: none;
+  color: #282c34;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.checkmate-body button:hover {
+  background-color: #ff9900; /* Darker gold on hover */
+}

@@ -1,0 +1,102 @@
+.tile {
+  display: grid;
+  place-content: center;
+  width: 100px;
+  height: 100px;
+}
+.tile .chess-piece:hover {
+  cursor: grab;
+}
+.tile .chess-piece:active {
+  cursor: grabbing;
+}
+
+.tile .chess-piece {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+}
+.black-tile, .white-tile {
+  overflow: hidden;
+}
+
+
+/* Black Tile */
+.black-tile {
+  background: linear-gradient(45deg, rgba(127, 86, 149, 1), rgba(49, 41, 3, 1));
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.3) inset;
+  border-radius: 8px;
+  /* animation: tile-cool-effect 2s infinite alternate; */
+}
+
+/* White Tile */
+.white-tile {
+  background: linear-gradient(45deg, #ebecd0, rgb(207, 170, 216));
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.3) inset;
+  border-radius: 8px;
+  /* animation: tile-cool-effect 2s infinite alternate-reverse; */
+}
+
+@keyframes tile-cool-effect {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(10deg);
+  }
+}
+
+.tile img {
+  width: 70px;
+}
+
+.tile-highlight:not(.chess-piece-tile):before {
+  content: " ";
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  /* animation: pulse 1s infinite; 1s duration, infinite loop */
+}
+
+.tile-highlight.chess-piece-tile:before {
+  content: " ";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  animation: coolest-pulse 4s infinite; /* 4s duration, infinite loop */
+}
+
+/*This was done by the chat GPT, sorry I just could'nt resist!! */
+@keyframes coolest-pulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 20px rgba(39, 17, 241, 0.6), 0 0 40px rgba(39, 17, 241, 0.3);
+    border-color: rgba(39, 17, 241, 0.6);
+  }
+  25% {
+    transform: scale(1.2) rotate(90deg);
+    box-shadow: 0 0 40px rgba(39, 17, 241, 0.9), 0 0 80px rgba(39, 17, 241, 0.4);
+    border-color: rgba(255, 0, 93, 0.8);
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    box-shadow: 0 0 20px rgba(39, 17, 241, 0.6), 0 0 40px rgba(39, 17, 241, 0.3);
+    border-color: rgba(39, 17, 241, 0.6);
+  }
+  75% {
+    transform: scale(1.2) rotate(270deg);
+    box-shadow: 0 0 40px rgba(39, 17, 241, 0.9), 0 0 80px rgba(39, 17, 241, 0.4);
+    border-color: rgba(255, 165, 0, 0.8);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    box-shadow: 0 0 20px rgba(39, 17, 241, 0.6), 0 0 40px rgba(39, 17, 241, 0.3);
+    border-color: rgba(39, 17, 241, 0.6);
+  }
+}
